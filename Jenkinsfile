@@ -11,7 +11,7 @@ pipeline {
     stage('Build') {
       steps {
         build 'PES2UG21CS417-1'
-        sh 'ge main.cpp-o output'
+        sh 'g++ main.cpp-o output'
       }
     }
     stage('Test') {
@@ -26,7 +26,7 @@ pipeline {
     }
   }
   post {
-    fallure{
+    failure{
       error 'Pipeline failed'
     }
   }
